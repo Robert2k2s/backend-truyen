@@ -375,7 +375,7 @@ app.get("/api/truyen", (req, res) => {
   res.status(200).json(listtruyen);
 });
 
-app.post("https://frontend-truyen.vercel.app/login", (req, res) => {
+app.post("/login", (req, res) => {
   const { username, password } = req.body;
   const user = users.find((user) => user.username === username);
   if (user && user.password === password) {
