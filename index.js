@@ -371,7 +371,7 @@ const users = [
   },
 ];
 
-app.get("/api/truyen", (req, res) => {
+app.get("/truyen", (req, res) => {
   res.status(200).json(listtruyen);
 });
 
@@ -385,7 +385,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-app.post("/api/register", (req, res) => {
+app.post("/register", (req, res) => {
   const { username, password } = req.body;
   const existingUser = users.find((user) => user.username === username);
   if (existingUser) {
@@ -402,14 +402,14 @@ app.post("/api/register", (req, res) => {
   return res.status(201).json({ message: "User created." });
 });
 
-app.post("/api/truyen", (req, res) => {
+app.post("/truyen", (req, res) => {
   const newTruyen = req.body;
   newTruyen.id = listtruyen.length + 1;
   listtruyen.push(newTruyen);
   res.json(listtruyen);
 });
 
-app.delete("/api/truyen/:id", (req, res) => {
+app.delete("/truyen/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const index = listtruyen.findIndex((truyen) => truyen.id === id);
   if (index !== -1) {
