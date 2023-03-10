@@ -6,6 +6,7 @@ const cors = require("cors");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+const port = process.env.PORT || 8080;
 const listtruyen = [
   {
     id: 1,
@@ -417,7 +418,7 @@ app.delete("/api/truyen/:id", (req, res) => {
   res.json(listtruyen);
 });
 
-app.listen(8080, () => {
-  console.log("Server is running on port 8080");
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
   res.send("server run ok");
 });
