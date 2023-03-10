@@ -419,4 +419,5 @@ app.delete("/api/truyen/:id", (req, res) => {
 
 app.listen(8080, () => {
   console.log("Server is running on port 8080");
+  res.send("server run ok");
 });
