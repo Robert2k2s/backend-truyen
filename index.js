@@ -420,5 +420,4 @@ app.delete("/truyen/:id", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-  res.send("server run ok");
 });
